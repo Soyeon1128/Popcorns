@@ -34,4 +34,5 @@
 - Firebase
 
 ## 영화 정보 API
-- [THE MOVIE DB](www.themoviedb.org)
+- [THE MOVIE DB](https://www.themoviedb.org)
+
