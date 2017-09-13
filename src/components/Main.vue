@@ -25,6 +25,8 @@ export default {
 </script>
 
 <style>
-
+.main-container {
+  height: 100%;
+}
 </style>
 

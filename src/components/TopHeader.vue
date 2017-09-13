@@ -13,9 +13,7 @@ export default {
 </script>
 
 <style>
-.header {
-  background: yellow;
-}
+
 </style>
 
 
