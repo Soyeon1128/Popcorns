@@ -1,7 +1,7 @@
 <template>
   <div class="topheader-container">
     <header class="header">
-      <h2>HEADER</h2>
+      <img src="../assets/popcorns.png">
     </header>
   </div>
 </template>
@@ -13,7 +13,16 @@ export default {
 </script>
 
 <style>
-
+.topheader-container {
+  width: 100%;
+}
+.header {
+  height: 60px;
+  background: yellow;
+}
+.header img {
+  height: 60px;
+}
 </style>
 
 
