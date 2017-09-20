@@ -14,7 +14,8 @@ export default {
 
 <style>
 .search-area {
-  background: green;  
+  background: green;
+  height: 1000px; 
 }
 </style>
 

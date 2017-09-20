@@ -2,7 +2,7 @@
   <div class="main-container">
     <top-header/>
     <rating/>
-    <!--<search/>-->
+    <search/>
   </div>
 </template>
 

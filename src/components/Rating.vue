@@ -1,5 +1,6 @@
 <template>
-  <div class="rating-container" :class="carouselClass">
+<div class="rating-container">
+  <div class="rating-carousel-wrapper" :class="carouselClass">
       <div class="rating-carousel" v-for="(item, index) in carouselData" :key="item.id"> 
         <div class="rating-wrapper" >
           <!--캐러셀 화살표-->
@@ -30,6 +31,7 @@
         </div>  
       </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -155,17 +157,23 @@ export default {
 </script>
 
 <style>
-body {
+/*body {
   overflow: hidden;
+}*/
+.rating-container {
+  height: 550px;
+  overflow: hidden; 
 }
 /* 컨테이너 영역 */
-.rating-container {
-  width: 1000%;
+.rating-carousel-wrapper {
+  width: 990vw;
 }
 /* 캐러셀 영역 */
 .rating-carousel {
-  width: 100vw;
+  width: 99vw;
   display: inline-block;
+  /*border: 3px solid red;*/
+  /*box-sizing: border-box;*/
 }
 .rating-wrapper{
   width: 100%;
@@ -203,76 +211,76 @@ body {
     margin-left: 0;
   }
   to {
-    margin-left: -100vw;
+    margin-left: -99vw;
   }
 }
 @keyframes push-left-2 {
   from {
-    margin-left: -100vw;
+    margin-left: -99vw;
   }
   to {
-    margin-left: -200vw;    
+    margin-left: -198vw;    
   }
 }
 @keyframes push-left-3 {
   from {
-    margin-left: -200vw;
+    margin-left: -198vw;
   }
   to {
-    margin-left: -300vw;  
+    margin-left: -297vw;  
   }
 }
 @keyframes push-left-4 {
   from {
-    margin-left: -300vw;  
+    margin-left: -297vw;  
   }
   to {
-    margin-left: -400vw;  
+    margin-left: -396vw;  
   }
 }
 @keyframes push-left-5 {
   from {
-    margin-left: -400vw;  
+    margin-left: -396vw;  
   }
   to {
-    margin-left: -500vw;  
+    margin-left: -495vw;  
   }
 }
 @keyframes push-left-6 {
   from {
-    margin-left: -500vw;  
+    margin-left: -495vw;  
   }
   to {
-    margin-left: -600vw;  
+    margin-left: -594vw;  
   }
 }
 @keyframes push-left-7 {
   from {
-    margin-left: -600vw;  
+    margin-left: -594vw;  
   }
   to {
-    margin-left: -700vw;  
+    margin-left: -693vw;
   }
 }
 @keyframes push-left-8 {
   from {
-    margin-left: -700vw;  
+    margin-left: -693vw;
   }
   to {
-    margin-left: -800vw;  
+    margin-left: -792vw;  
   }
 }
 @keyframes push-left-9 {
   from {
-    margin-left: -800vw;  
+    margin-left: -792vw;  
   }
   to {
-    margin-left: -900vw;  
+    margin-left: -891vw;  
   }
 }
 @keyframes push-left-10 {
   from {
-    margin-left: -900vw;  
+    margin-left: -891vw;  
   }
   to {
     margin-left: 0;  
@@ -319,12 +327,12 @@ body {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-900vw);    
+    transform: translateX(-891vw);    
   }
 }
 @keyframes push-right-2 {
   from {
-    transform: translateX(-100vw);    
+    transform: translateX(-99vw);    
   }
   to {
     transform: translateX(0);    
@@ -332,66 +340,66 @@ body {
 }
 @keyframes push-right-3 {
   from {
-    transform: translateX(-200vw);    
+    transform: translateX(-198vw);    
   }
   to {
-    transform: translateX(-100vw);        
+    transform: translateX(-99vw);        
   }
 }
 @keyframes push-right-4 {
   from {
-    transform: translateX(-300vw);
+    transform: translateX(-297vw);
   }
   to {
-    transform: translateX(-200vw);  
+    transform: translateX(-198vw);  
   }
 }
 @keyframes push-right-5 {
   from {
-    transform: translateX(-400vw);
+    transform: translateX(-396vw);
   }
   to {
-    transform: translateX(-300vw);  
+    transform: translateX(-297vw);  
   }
 }
 @keyframes push-right-6 {
   from {
-    transform: translateX(-500vw);
+    transform: translateX(-495vw);
   }
   to {
-    transform: translateX(-400vw);  
+    transform: translateX(-396vw);  
   }
 }
 @keyframes push-right-7 {
   from {
-    transform: translateX(-600vw);
+    transform: translateX(-594vw);
   }
   to {
-    transform: translateX(-500vw);  
+    transform: translateX(-495vw);  
   }
 }
 @keyframes push-right-8 {
   from {
-    transform: translateX(-700vw);
+    transform: translateX(-693vw);
   }
   to {
-    transform: translateX(-600vw);  
+    transform: translateX(-594vw);  
   }
 }
 @keyframes push-right-9 {
   from {
-    transform: translateX(-800vw);
+    transform: translateX(-792vw);
   }
   to {
-    transform: translateX(-700vw);  
+    transform: translateX(-693vw);  
   }
 }
 @keyframes push-right-10 {
   from {
-    transform: translateX(-900vw);
+    transform: translateX(-891vw);
   }
   to {
-    transform: translateX(-800vw); 
+    transform: translateX(-792vw); 
   }
 }
 .push-right-1 {
