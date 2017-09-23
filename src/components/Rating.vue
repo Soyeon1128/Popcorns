@@ -13,7 +13,7 @@
           <!--그라디언트 이미지-->
           <img class="rating-gradient" src="../assets/gradient6.png">
           <!--영화 이미지-->
-          <img class="rating-poster" v-bind:src="item.backdrop_path">
+          <img class="rating-poster" :src="item.backdrop_path">
           <!--영화 설명 영역-->
           <div class="rating-description">
             <h2 class="rating-title"> {{ item.title }} </h2>

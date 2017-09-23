@@ -2,6 +2,7 @@
   <div class="main-container">
     <top-header/>
     <rating/>
+    <rating-genre/>
     <search/>
   </div>
 </template>
@@ -10,11 +11,12 @@
 import TopHeader from './TopHeader.vue'
 import Rating from './Rating.vue'
 import Search from './Search.vue'
+import RatingGenre from './RatingGenre.vue'
 
 export default {
   name: 'Main',
   components: {
-    TopHeader, Rating, Search
+    TopHeader, Rating, RatingGenre, Search
   },
   data () {
     return {
