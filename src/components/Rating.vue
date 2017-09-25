@@ -53,7 +53,7 @@ export default {
     getRatingData() {
       // Popularity Rank 20 Movie 통신
       this.$http.get(
-        this.$store.state.url_rating
+        this.$store.state.url_discover + this.$store.state.api_key + this.$store.state.url_popularity + this.$store.state.url_korean
       )
       .then(response => {
         this.ratingData = response.data.results;
