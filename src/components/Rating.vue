@@ -206,7 +206,7 @@ export default {
   border: none;
   cursor: pointer;
 }
-@keyframes push-left-1 {
+@keyframes push-right-1 {
   from {
     margin-left: 0;
   }
@@ -214,7 +214,7 @@ export default {
     margin-left: -99vw;
   }
 }
-@keyframes push-left-2 {
+@keyframes push-right-2 {
   from {
     margin-left: -99vw;
   }
@@ -222,7 +222,7 @@ export default {
     margin-left: -198vw;    
   }
 }
-@keyframes push-left-3 {
+@keyframes push-right-3 {
   from {
     margin-left: -198vw;
   }
@@ -230,7 +230,7 @@ export default {
     margin-left: -297vw;  
   }
 }
-@keyframes push-left-4 {
+@keyframes push-right-4 {
   from {
     margin-left: -297vw;  
   }
@@ -238,7 +238,7 @@ export default {
     margin-left: -396vw;  
   }
 }
-@keyframes push-left-5 {
+@keyframes push-right-5 {
   from {
     margin-left: -396vw;  
   }
@@ -246,7 +246,7 @@ export default {
     margin-left: -495vw;  
   }
 }
-@keyframes push-left-6 {
+@keyframes push-right-6 {
   from {
     margin-left: -495vw;  
   }
@@ -254,7 +254,7 @@ export default {
     margin-left: -594vw;  
   }
 }
-@keyframes push-left-7 {
+@keyframes push-right-7 {
   from {
     margin-left: -594vw;  
   }
@@ -262,7 +262,7 @@ export default {
     margin-left: -693vw;
   }
 }
-@keyframes push-left-8 {
+@keyframes push-right-8 {
   from {
     margin-left: -693vw;
   }
@@ -270,7 +270,7 @@ export default {
     margin-left: -792vw;  
   }
 }
-@keyframes push-left-9 {
+@keyframes push-right-9 {
   from {
     margin-left: -792vw;  
   }
@@ -278,7 +278,7 @@ export default {
     margin-left: -891vw;  
   }
 }
-@keyframes push-left-10 {
+@keyframes push-right-10 {
   from {
     margin-left: -891vw;  
   }
@@ -322,7 +322,7 @@ export default {
   animation-timing-function: ease-in-out;
 }
 
-@keyframes push-right-1 {
+@keyframes push-left-1 {
   from {
     transform: translateX(0);
   }
@@ -330,7 +330,7 @@ export default {
     transform: translateX(-891vw);    
   }
 }
-@keyframes push-right-2 {
+@keyframes push-left-2 {
   from {
     transform: translateX(-99vw);    
   }
@@ -338,7 +338,7 @@ export default {
     transform: translateX(0);    
   }
 }
-@keyframes push-right-3 {
+@keyframes push-left-3 {
   from {
     transform: translateX(-198vw);    
   }
@@ -346,7 +346,7 @@ export default {
     transform: translateX(-99vw);        
   }
 }
-@keyframes push-right-4 {
+@keyframes push-left-4 {
   from {
     transform: translateX(-297vw);
   }
@@ -354,7 +354,7 @@ export default {
     transform: translateX(-198vw);  
   }
 }
-@keyframes push-right-5 {
+@keyframes push-left-5 {
   from {
     transform: translateX(-396vw);
   }
@@ -362,7 +362,7 @@ export default {
     transform: translateX(-297vw);  
   }
 }
-@keyframes push-right-6 {
+@keyframes push-left-6 {
   from {
     transform: translateX(-495vw);
   }
@@ -370,7 +370,7 @@ export default {
     transform: translateX(-396vw);  
   }
 }
-@keyframes push-right-7 {
+@keyframes push-left-7 {
   from {
     transform: translateX(-594vw);
   }
@@ -378,7 +378,7 @@ export default {
     transform: translateX(-495vw);  
   }
 }
-@keyframes push-right-8 {
+@keyframes push-left-8 {
   from {
     transform: translateX(-693vw);
   }
@@ -386,7 +386,7 @@ export default {
     transform: translateX(-594vw);  
   }
 }
-@keyframes push-right-9 {
+@keyframes push-left-9 {
   from {
     transform: translateX(-792vw);
   }
@@ -394,7 +394,7 @@ export default {
     transform: translateX(-693vw);  
   }
 }
-@keyframes push-right-10 {
+@keyframes push-left-10 {
   from {
     transform: translateX(-891vw);
   }

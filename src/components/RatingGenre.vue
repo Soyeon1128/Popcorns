@@ -1,6 +1,6 @@
 <template>
   <div class="rating-genre-container">
-    <h2>장르별 인기순위</h2>
+    <h2 class="genre-header">장르별 인기순위</h2>
     <div class="genre-area" v-for="(items, index) in genreData" :key="items[index].id">
       <h4> {{ genreName[index] }} </h4>
       <button class="genre-carousel-left" type="button" @click="assignClassLeft(index)">
@@ -319,15 +319,20 @@ export default {
 
 <style>
 .rating-genre-container {
-  background: pink;
   overflow: hidden;
+}
+.genre-header {
+  background: pink;
+  height: 50px;
 }
 .genre-area {
   height: 200px;
-  background: orange;
-  /*border: 2px solid blue;*/
-  /*box-sizing: border-box;*/
+  background: #000;
   position: relative;
+}
+.genre-area h4 {
+  color: #fff;
+  font-size: 16px;
 }
 .genre-carousel-left {
   position: absolute;
@@ -342,7 +347,6 @@ export default {
   z-index: 300; 
 }
 .genre-carousel-wrapper {
-  background: blue;
   width: 5000px;
   height: 143px;
 }
@@ -448,9 +452,6 @@ export default {
   animation-timing-function: ease-in-out;
 }
 .genre-carousel {
-  background: skyblue;
-  /*border: 2px solid red;*/
-  /*box-sizing: border-box;*/
   display: inline-block;
   width: 250px; 
   height: 146px;
@@ -459,20 +460,12 @@ export default {
 .genre-poster {
   max-height: 200px;
   width: 250px;
-  /*display: inline-block;*/
-  border: 2px solid #000;
-  box-sizing: border-box;
-  /*transform: translateX(-10%);*/
 }
 .genre-title {
-  /*position: relative;*/
-
-  /*float: right;*/
   transform: translateY(-26px);
   width: 250px;
   height: 26px;
   background: rgba(0,0,0,0.5);
-  /*padding: 3px;*/
   overflow: hidden;
 }
 .parent::after {
