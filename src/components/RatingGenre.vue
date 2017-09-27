@@ -2,14 +2,14 @@
   <div class="rating-genre-container">
     <h2>장르별 인기순위</h2>
     <div class="genre-area" v-for="(items, index) in genreData" :key="items[index].id">
-      <h4> {{ index }} </h4>
-      <button class="genre-carousel-left" type="button">
+      <h4> {{ genreName[index] }} </h4>
+      <button class="genre-carousel-left" type="button" @click="assignClassLeft(index)">
         <span> < </span>
       </button>
-      <button class="genre-carousel-right" type="button">
+      <button class="genre-carousel-right" type="button" @click="assignClassRight(index)">
         <span> > </span>
       </button>
-      <div class="genre-carousel-wrapper">
+      <div class="genre-carousel-wrapper" :class="classArray[index]">
         <div class="genre-carousel" v-for="(item, index) in items" :key="item.id">
           <img class="genre-poster" :src="item.backdrop_path">
           <div class="genre-title">
@@ -37,7 +37,8 @@ export default {
   data() {
     return {
       genreData: [],
-      
+      genreName: ["로맨스", "코미디", "액션", "SF", "공포", "애니메이션", "음악", "다큐멘터리"],
+      classArray: [ "", "", "", "", "", "", "", ""]
     }
   },
   methods: {
@@ -224,7 +225,394 @@ export default {
         console.log(error);
       })
     },
-
+    assignClassLeft(index) {
+      if ( index === 0 ) {     
+        // 기존에 클래스명이 존재할 경우
+        if ( !!this.classArray[0] ) {
+          switch ( this.classArray[0] ) {
+            case "genre-carousel-1" :
+              this.classArray.splice(0,1);
+              this.classArray.splice(0,0,"");
+            break;
+            case "genre-carousel-2" :
+              this.classArray.splice(0,1);
+              this.classArray.splice(0,0,"genre-carousel-1");
+            break;
+            case "genre-carousel-3" :
+              this.classArray.splice(0,1);
+              this.classArray.splice(0,0,"genre-carousel-2");
+            break;
+          }
+        }
+        // 기존에 클래스명이 존재하지 않을 경우
+        else if ( !this.classArray[0] ) {
+          this.classArray.splice(0,1);
+          this.classArray.splice(0,0,"genre-carousel-3");
+        }
+      }
+      else if ( index === 1 ) {
+        // 기존에 클래스명이 존재할 경우
+        if ( !!this.classArray[1] ) {
+          switch ( this.classArray[1] ) {
+            case "genre-carousel-1" :
+              this.classArray.splice(1,1);
+              this.classArray.splice(1,0,"");
+            break;
+            case "genre-carousel-2" :
+              this.classArray.splice(1,1);
+              this.classArray.splice(1,0,"genre-carousel-1");
+            break;
+            case "genre-carousel-3" :
+              this.classArray.splice(1,1);
+              this.classArray.splice(1,0,"genre-carousel-2");
+            break;
+          }
+        }
+        // 기존에 클래스명이 존재하지 않을 경우
+        else if ( !this.classArray[1] ) {
+          this.classArray.splice(1,1);
+          this.classArray.splice(1,0,"genre-carousel-3");
+        }
+      }
+      else if ( index === 2 ) {
+        // 기존에 클래스명이 존재할 경우
+        if ( !!this.classArray[2] ) {
+          switch ( this.classArray[2] ) {
+            case "genre-carousel-1" :
+              this.classArray.splice(2,1);
+              this.classArray.splice(2,0,"");
+            break;
+            case "genre-carousel-2" :
+              this.classArray.splice(2,1);
+              this.classArray.splice(2,0,"genre-carousel-1");
+            break;
+            case "genre-carousel-3" :
+              this.classArray.splice(2,1);
+              this.classArray.splice(2,0,"genre-carousel-2");
+            break;
+          }
+        }
+        // 기존에 클래스명이 존재하지 않을 경우
+        else if ( !this.classArray[2] ) {
+          this.classArray.splice(2,1);
+          this.classArray.splice(2,0,"genre-carousel-3");
+        }
+      }
+      else if ( index === 3 ) {
+        // 기존에 클래스명이 존재할 경우
+        if ( !!this.classArray[3] ) {
+          switch ( this.classArray[3] ) {
+            case "genre-carousel-1" :
+              this.classArray.splice(3,1);
+              this.classArray.splice(3,0,"");
+            break;
+            case "genre-carousel-2" :
+              this.classArray.splice(3,1);
+              this.classArray.splice(3,0,"genre-carousel-1");
+            break;
+            case "genre-carousel-3" :
+              this.classArray.splice(3,1);
+              this.classArray.splice(3,0,"genre-carousel-2");
+            break;
+          }
+        }
+        // 기존에 클래스명이 존재하지 않을 경우
+        else if ( !this.classArray[3] ) {
+          this.classArray.splice(3,1);
+          this.classArray.splice(3,0,"genre-carousel-3");
+        }
+      }
+      else if ( index === 4 ) {
+        // 기존에 클래스명이 존재할 경우
+        if ( !!this.classArray[4] ) {
+          switch ( this.classArray[4] ) {
+            case "genre-carousel-1" :
+              this.classArray.splice(4,1);
+              this.classArray.splice(4,0,"");
+            break;
+            case "genre-carousel-2" :
+              this.classArray.splice(4,1);
+              this.classArray.splice(4,0,"genre-carousel-1");
+            break;
+            case "genre-carousel-3" :
+              this.classArray.splice(4,1);
+              this.classArray.splice(4,0,"genre-carousel-2");
+            break;
+          }
+        }
+        // 기존에 클래스명이 존재하지 않을 경우
+        else if ( !this.classArray[4] ) {
+          this.classArray.splice(4,1);
+          this.classArray.splice(4,0,"genre-carousel-3");
+        }
+      }
+      else if ( index === 5 ) {
+        // 기존에 클래스명이 존재할 경우
+        if ( !!this.classArray[5] ) {
+          switch ( this.classArray[5] ) {
+            case "genre-carousel-1" :
+              this.classArray.splice(5,1);
+              this.classArray.splice(5,0,"");
+            break;
+            case "genre-carousel-2" :
+              this.classArray.splice(5,1);
+              this.classArray.splice(5,0,"genre-carousel-1");
+            break;
+            case "genre-carousel-3" :
+              this.classArray.splice(5,1);
+              this.classArray.splice(5,0,"genre-carousel-2");
+            break;
+          }
+        }
+        // 기존에 클래스명이 존재하지 않을 경우
+        else if ( !this.classArray[5] ) {
+          this.classArray.splice(5,1);
+          this.classArray.splice(5,0,"genre-carousel-3");
+        }
+      }
+      else if ( index === 6 ) {
+        // 기존에 클래스명이 존재할 경우
+        if ( !!this.classArray[6] ) {
+          switch ( this.classArray[6] ) {
+            case "genre-carousel-1" :
+              this.classArray.splice(6,1);
+              this.classArray.splice(6,0,"");
+            break;
+            case "genre-carousel-2" :
+              this.classArray.splice(6,1);
+              this.classArray.splice(6,0,"genre-carousel-1");
+            break;
+            case "genre-carousel-3" :
+              this.classArray.splice(6,1);
+              this.classArray.splice(6,0,"genre-carousel-2");
+            break;
+          }
+        }
+        // 기존에 클래스명이 존재하지 않을 경우
+        else if ( !this.classArray[6] ) {
+          this.classArray.splice(6,1);
+          this.classArray.splice(6,0,"genre-carousel-3");
+        }
+      }
+      else if ( index === 7 ) {
+        // 기존에 클래스명이 존재할 경우
+        if ( !!this.classArray[7] ) {
+          switch ( this.classArray[7] ) {
+            case "genre-carousel-1" :
+              this.classArray.splice(7,1);
+              this.classArray.splice(7,0,"");
+            break;
+            case "genre-carousel-2" :
+              this.classArray.splice(7,1);
+              this.classArray.splice(7,0,"genre-carousel-1");
+            break;
+            case "genre-carousel-3" :
+              this.classArray.splice(7,1);
+              this.classArray.splice(7,0,"genre-carousel-2");
+            break;
+          }
+        }
+        // 기존에 클래스명이 존재하지 않을 경우
+        else if ( !this.classArray[7] ) {
+          this.classArray.splice(7,1);
+          this.classArray.splice(7,0,"genre-carousel-3");
+        }
+      }
+    },
+    assignClassRight(index) {
+      if ( index === 0 ) {     
+        // 기존에 클래스명이 존재할 경우
+        if ( !!this.classArray[0] ) {
+          switch ( this.classArray[0] ) {
+            case "genre-carousel-3" :
+              this.classArray.splice(0,1);
+              this.classArray.splice(0,0,"");
+            break;
+            case "genre-carousel-2" :
+              this.classArray.splice(0,1);
+              this.classArray.splice(0,0,"genre-carousel-3");
+            break;
+            case "genre-carousel-1" :
+              this.classArray.splice(0,1);
+              this.classArray.splice(0,0,"genre-carousel-2");
+            break;
+          }
+        }
+        // 기존에 클래스명이 존재하지 않을 경우
+        else if ( !this.classArray[0] ) {
+          this.classArray.splice(0,1);
+          this.classArray.splice(0,0,"genre-carousel-1");
+        }
+      }
+      else if ( index === 1 ) {
+        // 기존에 클래스명이 존재할 경우
+        if ( !!this.classArray[1] ) {
+          switch ( this.classArray[1] ) {
+            case "genre-carousel-3" :
+              this.classArray.splice(1,1);
+              this.classArray.splice(1,0,"");
+            break;
+            case "genre-carousel-2" :
+              this.classArray.splice(1,1);
+              this.classArray.splice(1,0,"genre-carousel-3");
+            break;
+            case "genre-carousel-1" :
+              this.classArray.splice(1,1);
+              this.classArray.splice(1,0,"genre-carousel-2");
+            break;
+          }
+        }
+        // 기존에 클래스명이 존재하지 않을 경우
+        else if ( !this.classArray[1] ) {
+          this.classArray.splice(1,1);
+          this.classArray.splice(1,0,"genre-carousel-1");
+        }
+      }
+      else if ( index === 2 ) {
+        // 기존에 클래스명이 존재할 경우
+        if ( !!this.classArray[2] ) {
+          switch ( this.classArray[2] ) {
+            case "genre-carousel-3" :
+              this.classArray.splice(2,1);
+              this.classArray.splice(2,0,"");
+            break;
+            case "genre-carousel-2" :
+              this.classArray.splice(2,1);
+              this.classArray.splice(2,0,"genre-carousel-3");
+            break;
+            case "genre-carousel-1" :
+              this.classArray.splice(2,1);
+              this.classArray.splice(2,0,"genre-carousel-2");
+            break;
+          }
+        }
+        // 기존에 클래스명이 존재하지 않을 경우
+        else if ( !this.classArray[2] ) {
+          this.classArray.splice(2,1);
+          this.classArray.splice(2,0,"genre-carousel-1");
+        }
+      }
+      else if ( index === 3 ) {
+        // 기존에 클래스명이 존재할 경우
+        if ( !!this.classArray[3] ) {
+          switch ( this.classArray[3] ) {
+            case "genre-carousel-3" :
+              this.classArray.splice(3,1);
+              this.classArray.splice(3,0,"");
+            break;
+            case "genre-carousel-2" :
+              this.classArray.splice(3,1);
+              this.classArray.splice(3,0,"genre-carousel-3");
+            break;
+            case "genre-carousel-1" :
+              this.classArray.splice(3,1);
+              this.classArray.splice(3,0,"genre-carousel-2");
+            break;
+          }
+        }
+        // 기존에 클래스명이 존재하지 않을 경우
+        else if ( !this.classArray[3] ) {
+          this.classArray.splice(3,1);
+          this.classArray.splice(3,0,"genre-carousel-1");
+        }
+      }
+      else if ( index === 4 ) {
+        // 기존에 클래스명이 존재할 경우
+        if ( !!this.classArray[4] ) {
+          switch ( this.classArray[4] ) {
+            case "genre-carousel-3" :
+              this.classArray.splice(4,1);
+              this.classArray.splice(4,0,"");
+            break;
+            case "genre-carousel-2" :
+              this.classArray.splice(4,1);
+              this.classArray.splice(4,0,"genre-carousel-3");
+            break;
+            case "genre-carousel-1" :
+              this.classArray.splice(4,1);
+              this.classArray.splice(4,0,"genre-carousel-2");
+            break;
+          }
+        }
+        // 기존에 클래스명이 존재하지 않을 경우
+        else if ( !this.classArray[4] ) {
+          this.classArray.splice(4,1);
+          this.classArray.splice(4,0,"genre-carousel-1");
+        }
+      }
+      else if ( index === 5 ) {
+        // 기존에 클래스명이 존재할 경우
+        if ( !!this.classArray[5] ) {
+          switch ( this.classArray[5] ) {
+            case "genre-carousel-3" :
+              this.classArray.splice(5,1);
+              this.classArray.splice(5,0,"");
+            break;
+            case "genre-carousel-2" :
+              this.classArray.splice(5,1);
+              this.classArray.splice(5,0,"genre-carousel-3");
+            break;
+            case "genre-carousel-1" :
+              this.classArray.splice(5,1);
+              this.classArray.splice(5,0,"genre-carousel-2");
+            break;
+          }
+        }
+        // 기존에 클래스명이 존재하지 않을 경우
+        else if ( !this.classArray[5] ) {
+          this.classArray.splice(5,1);
+          this.classArray.splice(5,0,"genre-carousel-1");
+        }
+      }
+      else if ( index === 6 ) {
+        // 기존에 클래스명이 존재할 경우
+        if ( !!this.classArray[6] ) {
+          switch ( this.classArray[6] ) {
+            case "genre-carousel-3" :
+              this.classArray.splice(6,1);
+              this.classArray.splice(6,0,"");
+            break;
+            case "genre-carousel-2" :
+              this.classArray.splice(6,1);
+              this.classArray.splice(6,0,"genre-carousel-3");
+            break;
+            case "genre-carousel-1" :
+              this.classArray.splice(6,1);
+              this.classArray.splice(6,0,"genre-carousel-2");
+            break;
+          }
+        }
+        // 기존에 클래스명이 존재하지 않을 경우
+        else if ( !this.classArray[6] ) {
+          this.classArray.splice(6,1);
+          this.classArray.splice(6,0,"genre-carousel-1");
+        }
+      }
+      else if ( index === 7 ) {
+        // 기존에 클래스명이 존재할 경우
+        if ( !!this.classArray[7] ) {
+          switch ( this.classArray[7] ) {
+            case "genre-carousel-3" :
+              this.classArray.splice(7,1);
+              this.classArray.splice(7,0,"");
+            break;
+            case "genre-carousel-2" :
+              this.classArray.splice(7,1);
+              this.classArray.splice(7,0,"genre-carousel-3");
+            break;
+            case "genre-carousel-1" :
+              this.classArray.splice(7,1);
+              this.classArray.splice(7,0,"genre-carousel-2");
+            break;
+          }
+        }
+        // 기존에 클래스명이 존재하지 않을 경우
+        else if ( !this.classArray[7] ) {
+          this.classArray.splice(7,1);
+          this.classArray.splice(7,0,"genre-carousel-1");
+        }
+      }
+    }
   }
 }
 </script>
@@ -261,10 +649,19 @@ export default {
   /*padding: 0 50px;*/
   /*transform: translateX(-400px);*/
 }
+.genre-carousel-1 {
+  transform: translateX(-1155px);  
+}
+.genre-carousel-2 {
+  transform: translateX(-2415px);  
+}
+.genre-carousel-3 {
+  transform: translateX(-3575px);  
+}
 .genre-carousel {
   background: skyblue;
-  border: 2px solid red;
-  box-sizing: border-box;
+  /*border: 2px solid red;*/
+  /*box-sizing: border-box;*/
   display: inline-block;
   width: 250px; 
   height: 146px; 
