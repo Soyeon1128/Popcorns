@@ -1,35 +1,35 @@
 <template>
 <div class="rating-container">
   <div class="rating-carousel-wrapper" :class="carouselClass">
-      <div class="rating-carousel" v-for="(item, index) in carouselData" :key="item.id"> 
-        <div class="rating-wrapper" >
-          <!--캐러셀 화살표-->
-          <button class="carousel-left" type="button" :value="`left${index+1}`" @click="pushLeft">
-            <span> < </span>
-          </button>
-          <button class="carousel-right" type="button" :value="`right${index+1}`" @click="pushRight">
-            <span> > </span>
-          </button>
-          <!--그라디언트 이미지-->
-          <img class="rating-gradient" src="../assets/gradient6.png">
-          <!--영화 이미지-->
-          <img class="rating-poster" :src="item.backdrop_path">
-          <!--영화 설명 영역-->
-          <div class="rating-description">
-            <h2 class="rating-title"> {{ item.title }} </h2>
-            <div class="rating-subtitle">
-              <h5> {{ item.original_title }} </h5>
-              <span> {{ item.release_date }} </span>
-            </div>
-            <div class="rating-tagline">
-              {{ item.tagline }}
-            </div>
-            <div class="rating-overview">
-              {{ item.overview }}
-            </div>
+    <div class="rating-carousel" v-for="(item, index) in carouselData" :key="item.id"> 
+      <div class="rating-wrapper" >
+        <!--캐러셀 화살표-->
+        <button class="carousel-left" type="button" :value="`left${index+1}`" @click="pushLeft">
+          <span> < </span>
+        </button>
+        <button class="carousel-right" type="button" :value="`right${index+1}`" @click="pushRight">
+          <span> > </span>
+        </button>
+        <!--그라디언트 이미지-->
+        <img class="rating-gradient" src="../assets/gradient6.png">
+        <!--영화 이미지-->
+        <img class="rating-poster" :src="item.backdrop_path">
+        <!--영화 설명 영역-->
+        <div class="rating-description">
+          <h2 class="rating-title"> {{ item.title }} </h2>
+          <div class="rating-subtitle">
+            <h5> {{ item.original_title }} </h5>
+            <span> {{ item.release_date }} </span>
           </div>
-        </div>  
-      </div>
+          <div class="rating-tagline">
+            {{ item.tagline }}
+          </div>
+          <div class="rating-overview">
+            {{ item.overview }}
+          </div>
+        </div>
+      </div>  
+    </div>
   </div>
 </div>
 </template>
@@ -162,11 +162,13 @@ export default {
 }*/
 .rating-container {
   height: 550px;
-  overflow: hidden; 
+  overflow: hidden;
+  /*padding-top: 10px;*/
 }
 /* 컨테이너 영역 */
 .rating-carousel-wrapper {
   width: 990vw;
+  /*padding-top: 10px;*/
 }
 /* 캐러셀 영역 */
 .rating-carousel {

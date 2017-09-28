@@ -1,8 +1,8 @@
 <template>
   <div class="topheader-container">
     <header class="header">
-      <h1 @click="getData">!통신!</h1> 
-      <img src="../assets/popcorns.png">
+      <!--<h1 @click="getTestData">!통신!</h1> -->
+      <img src="../assets/header_img.png">
     </header>
   </div>
 </template>
@@ -11,12 +11,12 @@
 export default {
   name: 'TopHeader',
   methods : {
-    getData() {
+    getTestData() {
       this.$http.get(
         // "https://api.themoviedb.org/3/search/movie?api_key=d699f344a468b575a26d5ea50f0265f4&language=ko&query=boyhood"
-        // "https://api.themoviedb.org/3/movie/211672?api_key=d699f344a468b575a26d5ea50f0265f4&language=ko"
+        "https://api.themoviedb.org/3/movie/211672?api_key=d699f344a468b575a26d5ea50f0265f4&language=ko"
         // "http://api.themoviedb.org/3/discover/movie?api_key=d699f344a468b575a26d5ea50f0265f4&language=ko&sort_by=popularity.desc"
-        "https://api.themoviedb.org/3/genre/movie/list?api_key=d699f344a468b575a26d5ea50f0265f4"
+        // "https://api.themoviedb.org/3/genre/movie/list?api_key=d699f344a468b575a26d5ea50f0265f4"
         // "http://api.themoviedb.org/3/discover/movie?api_key=d699f344a468b575a26d5ea50f0265f4&with_genres=99&sort_by=popularity.desc&language=ko"
         // "http://api.themoviedb.org/3/discover/movie?api_key=d699f344a468b575a26d5ea50f0265f4&language=ko&certification_country=US&certification=R&sort_by=vote_average.desc"
         // "http://api.themoviedb.org/3/discover/movie/?api_key=d699f344a468b575a26d5ea50f0265f4&language=ko&certification_country=US&certification=R&sort_by=vote_average.desc"
@@ -42,10 +42,17 @@ export default {
 .header {
   width: 100%;
   height: 70px;
-  background: yellow;
+  /*overflow: hidden;*/
+  /*background: #000;*/
+  /*background: yellow;*/
 }
 .header img {
-  height: 70px;
+  width: 100%;
+  /*transform: translateY(-50%)*/
+  /*width: 50%;*/
+  /*margin: 5px 0;
+  width: 4%;
+  margin-left: 48%;*/
 }
 </style>
 

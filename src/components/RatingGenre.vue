@@ -47,9 +47,7 @@ export default {
         this.$store.state.url_discover + this.$store.state.api_key + "&with_genres=10749" + this.$store.state.url_popularity + this.$store.state.url_korean
       )
       .then(response => {
-        console.log(response.data);
         this.genreData.push(response.data.results);
-
         for(let i=0; i<20; i++) {
           if ( !!this.genreData[0][i].backdrop_path ) {
             this.genreData[0][i].backdrop_path = this.$store.state.url_backdrop + this.genreData[0][i].backdrop_path;
@@ -57,9 +55,7 @@ export default {
           else {
             this.genreData[0][i].backdrop_path = this.$store.state.url_noposter;
           }
-        
         }
-
       })
       .catch(error => {
         console.log(error);
@@ -70,9 +66,7 @@ export default {
         this.$store.state.url_discover + this.$store.state.api_key + "&with_genres=35" + this.$store.state.url_popularity + this.$store.state.url_korean
       )
       .then(response => {
-        console.log(response.data);
         this.genreData.push(response.data.results);
-
         for(let i=0; i<20; i++) {
           if ( !!this.genreData[1][i].backdrop_path ) {
             this.genreData[1][i].backdrop_path = this.$store.state.url_backdrop + this.genreData[1][i].backdrop_path;
@@ -80,9 +74,7 @@ export default {
           else {
             this.genreData[1][i].backdrop_path = this.$store.state.url_noposter;
           }
-        
         }
-
       })
       .catch(error => {
         console.log(error);
@@ -93,9 +85,7 @@ export default {
         this.$store.state.url_discover + this.$store.state.api_key + "&with_genres=28" + this.$store.state.url_popularity + this.$store.state.url_korean
       )
       .then(response => {
-        console.log(response.data);
         this.genreData.push(response.data.results);
-
         for(let i=0; i<20; i++) {
           if ( !!this.genreData[2][i].backdrop_path ) {
             this.genreData[2][i].backdrop_path = this.$store.state.url_backdrop + this.genreData[2][i].backdrop_path;
@@ -103,9 +93,7 @@ export default {
           else {
             this.genreData[2][i].backdrop_path = this.$store.state.url_noposter;
           }
-        
         }
-
       })
       .catch(error => {
         console.log(error);
@@ -116,9 +104,7 @@ export default {
         this.$store.state.url_discover + this.$store.state.api_key + "&with_genres=878" + this.$store.state.url_popularity + this.$store.state.url_korean
       )
       .then(response => {
-        console.log(response.data);
         this.genreData.push(response.data.results);
-
         for(let i=0; i<20; i++) {
           if ( !!this.genreData[3][i].backdrop_path ) {
             this.genreData[3][i].backdrop_path = this.$store.state.url_backdrop + this.genreData[3][i].backdrop_path;
@@ -126,9 +112,7 @@ export default {
           else {
             this.genreData[3][i].backdrop_path = this.$store.state.url_noposter;
           }
-        
         }
-
       })
       .catch(error => {
         console.log(error);
@@ -139,9 +123,7 @@ export default {
         this.$store.state.url_discover + this.$store.state.api_key + "&with_genres=27" + this.$store.state.url_popularity + this.$store.state.url_korean
       )
       .then(response => {
-        console.log(response.data);
         this.genreData.push(response.data.results);
-
         for(let i=0; i<20; i++) {
           if ( !!this.genreData[4][i].backdrop_path ) {
             this.genreData[4][i].backdrop_path = this.$store.state.url_backdrop + this.genreData[4][i].backdrop_path;
@@ -149,9 +131,7 @@ export default {
           else {
             this.genreData[4][i].backdrop_path = this.$store.state.url_noposter;
           }
-        
         }
-
       })
       .catch(error => {
         console.log(error);
@@ -162,9 +142,7 @@ export default {
         this.$store.state.url_discover + this.$store.state.api_key + "&with_genres=16" + this.$store.state.url_popularity + this.$store.state.url_korean
       )
       .then(response => {
-        console.log(response.data);
         this.genreData.push(response.data.results);
-
         for(let i=0; i<20; i++) {
           if ( !!this.genreData[5][i].backdrop_path ) {
             this.genreData[5][i].backdrop_path = this.$store.state.url_backdrop + this.genreData[5][i].backdrop_path;
@@ -172,9 +150,7 @@ export default {
           else {
             this.genreData[5][i].backdrop_path = this.$store.state.url_noposter;
           }
-        
         }
-
       })
       .catch(error => {
         console.log(error);
@@ -185,9 +161,7 @@ export default {
         this.$store.state.url_discover + this.$store.state.api_key + "&with_genres=10402" + this.$store.state.url_popularity + this.$store.state.url_korean
       )
       .then(response => {
-        console.log(response.data);
         this.genreData.push(response.data.results);
-
         for(let i=0; i<20; i++) {
           if ( !!this.genreData[6][i].backdrop_path ) {
             this.genreData[6][i].backdrop_path = this.$store.state.url_backdrop + this.genreData[6][i].backdrop_path;
@@ -195,9 +169,7 @@ export default {
           else {
             this.genreData[6][i].backdrop_path = this.$store.state.url_noposter;
           }
-        
         }
-
       })
       .catch(error => {
         console.log(error);
@@ -208,9 +180,7 @@ export default {
         this.$store.state.url_discover + this.$store.state.api_key + "&with_genres=99" + this.$store.state.url_popularity + this.$store.state.url_korean
       )
       .then(response => {
-        console.log(response.data);
         this.genreData.push(response.data.results);
-
         for(let i=0; i<20; i++) {
           if ( !!this.genreData[7][i].backdrop_path ) {
             this.genreData[7][i].backdrop_path = this.$store.state.url_backdrop + this.genreData[7][i].backdrop_path;
@@ -219,7 +189,6 @@ export default {
             this.genreData[7][i].backdrop_path = this.$store.state.url_noposter;
           }
         }
-
       })
       .catch(error => {
         console.log(error);
@@ -320,31 +289,57 @@ export default {
 <style>
 .rating-genre-container {
   overflow: hidden;
+  padding-top: 10px;
+  background: #000;
 }
 .genre-header {
-  background: pink;
-  height: 50px;
+  background: #000;
+  font-size: 35px;
+  font-weight: 500;
+  color: #ccc;
+  margin: 20px 0 30px 20px;
+  /*height: 50px;*/
 }
 .genre-area {
-  height: 200px;
-  background: #000;
   position: relative;
+  height: 200px;
+  /*margin-bottom: 20px;*/
+  background: #000;
 }
 .genre-area h4 {
-  color: #fff;
-  font-size: 16px;
+  color: #ccc;
+  font-size: 20px;
+  /*padding: 5px;*/
+  margin: 0 0 15px 20px;
+  /*display: inline-block;*/
 }
 .genre-carousel-left {
   position: absolute;
-  top: 40%;
+  top: 35px;
   left: 0;
   z-index: 300;
+  cursor: pointer;
+  background: rgba(0,0,0,0.7);
+  border: none;
+  height: 141px;
+  width: 40px;
+  font-size: 25px;
+  font-weight: 700;
+  color: #ccc;
 }
 .genre-carousel-right {
   position: absolute;
-  top: 40%;
+  top: 35px;
   right: 0;
-  z-index: 300; 
+  z-index: 300;
+  cursor: pointer;
+  background: rgba(0,0,0,0.7);
+  border: none;
+  height: 141px;
+  width: 40px;
+  font-size: 25px;
+  font-weight: 700;
+  color: #ccc; 
 }
 .genre-carousel-wrapper {
   width: 5000px;
@@ -456,6 +451,8 @@ export default {
   width: 250px; 
   height: 146px;
   overflow: hidden;
+  /*border: 2px solid #000;*/
+  /*box-sizing: border-box;*/
 }
 .genre-poster {
   max-height: 200px;

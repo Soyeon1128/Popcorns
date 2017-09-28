@@ -3,7 +3,7 @@
     <top-header/>
     <rating/>
     <rating-genre/>
-    <search/>
+    <!--<search/>-->
   </div>
 </template>
 
@@ -28,9 +28,8 @@ export default {
 
 <style>
 .main-container {
-  /*position: relative;*/
   height: 100%;
-  /*background: #000;*/
+  background: #000;
 }
 </style>
 
