@@ -2,7 +2,7 @@
 <div class="rating-container">
   <div class="rating-carousel-wrapper" :class="carouselClass">
     <div class="rating-carousel" v-for="(item, index) in carouselData" :key="item.id"> 
-      <div class="rating-wrapper" >
+      <div class="rating-wrapper" @click="showInfo">
         <!--캐러셀 화살표-->
         <button class="carousel-left" type="button" :value="`left${index+1}`" @click="pushLeft">
           <span> < </span>
@@ -11,7 +11,7 @@
           <span> > </span>
         </button>
         <!--그라디언트 이미지-->
-        <img class="rating-gradient" src="../assets/gradient6.png">
+        <img class="rating-gradient" src="../assets/gradient_img.png">
         <!--영화 이미지-->
         <img class="rating-poster" :src="item.backdrop_path">
         <!--영화 설명 영역-->
@@ -151,7 +151,9 @@ export default {
           break;
       }
     },
-
+    showInfo() {
+      
+    }
   }
 }
 </script>
@@ -163,7 +165,7 @@ export default {
 .rating-container {
   height: 550px;
   overflow: hidden;
-  /*padding-top: 10px;*/
+  padding-top: 70px;
 }
 /* 컨테이너 영역 */
 .rating-carousel-wrapper {

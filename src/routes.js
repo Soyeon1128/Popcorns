@@ -1,4 +1,5 @@
 import Main from './components/Main.vue'
+import Information from './components/Information.vue'
 
 export const routes = [
   {
@@ -7,5 +8,11 @@ export const routes = [
     components: {
       default: Main
     }
-  }
+  },
+  {
+    path: '/information',
+    components: {
+      default: Information
+    }
+  },
 ]
