@@ -1,7 +1,7 @@
 <template>
   <div class="main-container">
     <top-header/>
-    <rating/>
+    <!--<rating/>-->
     <!--<rating-genre/>-->
     <information/>
   </div>
