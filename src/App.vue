@@ -63,5 +63,6 @@ table {
 
 html, body, #app {
 	height: 100%;
+	background: #000;
 }
 </style>

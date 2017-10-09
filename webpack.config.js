@@ -57,7 +57,10 @@ module.exports = {
   devtool: '#eval-source-map'
 }
 
+
 if (process.env.NODE_ENV === 'production') {
+  // process.noDeprecation = true;
+  
   module.exports.devtool = '#source-map'
   // 참고 URL:
   // https://vue-loader.vuejs.org/kr/workflow/production.html

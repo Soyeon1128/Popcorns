@@ -2,7 +2,7 @@
   <div class="topheader-container">
     <header class="header">
       <h1>POPCORNS</h1>
-      <button class="test" @click="getTestData">통신</button> 
+      <!--<button class="test" @click="getTestData">통신</button> -->
       <!--<img src="../assets/header_img.png">-->
     </header>
   </div>
@@ -14,9 +14,9 @@ export default {
   methods : {
     getTestData() {
       this.$http.get(
-        "http://api.themoviedb.org/3/movie/155/casts?api_key=d699f344a468b575a26d5ea50f0265f4",
+        // "http://api.themoviedb.org/3/movie/155/casts?api_key=d699f344a468b575a26d5ea50f0265f4",
 
-        // "https://api.themoviedb.org/3/search/movie?api_key=d699f344a468b575a26d5ea50f0265f4&language=ko&query=boyhood"
+        "https://api.themoviedb.org/3/search/movie?api_key=d699f344a468b575a26d5ea50f0265f4&language=ko&query=boyhood"
         // "https://api.themoviedb.org/3/movie/155?api_key=d699f344a468b575a26d5ea50f0265f4&language=ko"
         // "http://api.themoviedb.org/3/discover/movie?api_key=d699f344a468b575a26d5ea50f0265f4&language=ko&sort_by=popularity.desc"
         // "https://api.themoviedb.org/3/genre/movie/list?api_key=d699f344a468b575a26d5ea50f0265f4"
@@ -59,8 +59,8 @@ export default {
   /*line-height: 70px;*/
   padding: 5px 12px 3px 12px;
   display: inline-block;
-  border: 3px solid rgba(255, 0, 0, 0.7);
-  border-radius: 20px;
+  /*border: 3px solid rgba(255, 0, 0, 0.7);*/
+  /*border-radius: 20px;*/
 }
 .test {
   width: 80px;
