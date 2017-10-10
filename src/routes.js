@@ -10,6 +10,7 @@ export const routes = [
     }
   },
   {
+    name: 'Information',
     path: '/information',
     components: {
       default: Information

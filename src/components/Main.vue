@@ -1,9 +1,9 @@
 <template>
   <div class="main-container">
     <top-header/>
-    <!--<rating/>-->
-    <!--<rating-genre/>-->
-    <information/>
+    <rating/>
+    <rating-genre/>
+    <!--<information/>-->
   </div>
 </template>
 

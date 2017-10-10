@@ -9,9 +9,9 @@
       <button class="genre-carousel-right" type="button" @click="assignClassRight(index)">
         <span> > </span>
       </button>
-      <div class="genre-carousel-wrapper" :class="classArray[index]">
-        <div class="genre-carousel" v-for="(item, index) in items" :key="item.id">
-          <img class="genre-poster" :src="item.backdrop_path">
+      <div class="genre-carousel-wrapper" :class="classArray[index]" :value="index">
+        <div class="genre-carousel" v-for="(item, index) in items" :key="item.id" >
+          <img class="genre-poster" :src="item.backdrop_path" :value="index" @click="clickGenre">
           <div class="genre-title">
             <span> {{ item.title }} </span>
           </div>
@@ -38,7 +38,8 @@ export default {
     return {
       genreData: [],
       genreName: ["로맨스", "코미디", "액션", "SF", "공포", "애니메이션", "음악", "다큐멘터리"],
-      classArray: [ "", "", "", "", "", "", "", "" ]
+      classArray: [ "", "", "", "", "", "", "", "" ],
+      genreMovieId: ""
     }
   },
   methods: {
@@ -282,6 +283,24 @@ export default {
         }
       }
     },
+    clickGenre(e) {
+      // console.log(e);
+      // console.log("인덱스",e.target.attributes[1].value);
+      let movie_index = e.target.attributes[1].value;
+      // console.log("장르 인덱스",e.target.parentElement.parentElement.attributes[0].value);
+      let genre_index = e.target.parentElement.parentElement.attributes[0].value;
+      let genre_rating_id = this.genreData[genre_index][movie_index].id;
+      // console.log("과연과연",genre_rating_id);
+      this.genreMovieId = genre_rating_id;
+
+      this.$router.push({
+        name: 'Information',
+        params: {
+          ID: this.genreMovieId
+        }
+      })
+
+    }
   }
 }
 </script>
@@ -309,6 +328,7 @@ export default {
 .genre-area h4 {
   color: #ccc;
   font-size: 20px;
+  /*font-weight: 700;*/
   /*padding: 5px;*/
   margin: 0 0 15px 20px;
   /*display: inline-block;*/

@@ -1,8 +1,10 @@
 <template>
+
   <div class="information-container">
+  <top-header/>
     <img class="info-bg" :src="movieData.backdrop_path" alt="배경 이미지">
     <div class="info-wrapper">
-      <!--<h2 class="info-header">영화 상세 정보</h2>-->
+      <h2 class="info-header">Movie Detail</h2>
       <div class="info-movie">
         <div class="info-poster">
           <img :src="movieData.poster_path" alt="포스터 이미지">
@@ -60,10 +62,15 @@
 </template>
 
 <script>
+import TopHeader from './TopHeader.vue'
+
 export default {
   name: 'Information',
+  components: {
+    TopHeader
+  },
   created() {
-    this.getMovieData();
+    this.getMovieData(this.$route.params.ID);
   },
   data () {
     return {
@@ -82,19 +89,19 @@ export default {
     }
   },
   methods: {
-    getMovieData() {
-      // let movie_id = "155"; 
-      // let movie_id = "293660";
-      let movie_id = "27205";
-      // let movie_id = "13";
-      // let movie_id = "372058";
-      // let movie_id = "296096";
-      // let movie_id = "597";
-      // let movie_id = "310";
-      // let movie_id = "343668";
+    getMovieData(movieId) {
+      // let movieId = "155";
+      // let movieId = "293660";
+      // let movieId = "27205";
+      // let movieId = "13";
+      // let movieId = "372058";
+      // let movieId = "296096";
+      // let movieId = "597";
+      // let movieId = "310";
+      // let movieId = "343668";
 
       this.$http.get(
-        this.$store.state.url_movie + movie_id + this.$store.state.api_key + this.$store.state.url_korean
+        this.$store.state.url_movie + movieId + this.$store.state.api_key + this.$store.state.url_korean
       )
       .then(response => {
         console.log(response.data);
@@ -204,7 +211,7 @@ export default {
 
         // Credit 통신
         this.$http.get(
-          this.$store.state.url_movie + movie_id + "/credits" + this.$store.state.api_key + this.$store.state.url_korean
+          this.$store.state.url_movie + movieId + "/credits" + this.$store.state.api_key + this.$store.state.url_korean
         )
         .then(response => {
           this.creditData = response.data;
@@ -222,13 +229,16 @@ export default {
           }
           else {
             this.crewData.profile_path = this.$store.state.url_noprofile;
-
           }
 
-          
           // cast 데이터
           for(let i=0; i<11; i++) {
-            this.creditData.cast[i].profile_path = this.$store.state.url_profile + this.creditData.cast[i].profile_path;
+            if( !!this.creditData.cast[i].profile_path ) {
+              this.creditData.cast[i].profile_path = this.$store.state.url_profile + this.creditData.cast[i].profile_path;
+            }
+            else {
+              this.creditData.cast[i].profile_path = this.$store.state.url_noprofile;              
+            }
             this.castData.push(this.creditData.cast[i]);
           }
 
@@ -268,17 +278,20 @@ export default {
   margin-top: 78px;
   font-size: 18px;
 }
-/*.info-header {
-  font-size: 28px;
-  margin: 20px 0 30px 140px;
-}*/
+.info-header {
+  font-size: 30px;
+  /*padding: 30px;*/
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 20px 0 0 30px;
+}
 /* 영화 정보 영역 */
 .info-movie {
   width: 74%;
-  margin: 0 13%;
+  margin: 2% 0 0 16%;
   float: left;
-  padding: 4% 0;
-  height: 100%;
+  /*padding: 2% 0;*/
+  height: 90%;
   box-sizing: border-box;
 }
 .info-poster {

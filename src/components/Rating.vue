@@ -1,8 +1,9 @@
 <template>
 <div class="rating-container">
   <div class="rating-carousel-wrapper" :class="carouselClass">
-    <div class="rating-carousel" v-for="(item, index) in carouselData" :key="item.id"> 
-      <div class="rating-wrapper" @click="showInfo">
+    <div class="rating-carousel" v-for="(item, index) in carouselData" :key="item.id">
+      <div class="rating-click-area" :value="index" @click="clickRating"></div>
+      <div class="rating-wrapper">
         <!--캐러셀 화살표-->
         <button class="carousel-left" type="button" :value="`left${index+1}`" @click="pushLeft">
           <span> < </span>
@@ -28,7 +29,7 @@
             {{ item.overview }}
           </div>
         </div>
-      </div>  
+      </div>
     </div>
   </div>
 </div>
@@ -45,7 +46,8 @@ export default {
       ratingData : "",
       ratingId: [],
       carouselData: [],
-      carouselClass: ""
+      carouselClass: "",
+      ratingMovieId: ""
     }
   },
   methods: {
@@ -81,7 +83,7 @@ export default {
     },
     pushLeft(e) {
       let targetValue = e.target.parentElement.attributes[1].value;
-      console.log(targetValue);
+      // console.log(targetValue);
       switch(targetValue) {
         case 'left1':
           this.carouselClass = 'push-left-1';
@@ -151,8 +153,18 @@ export default {
           break;
       }
     },
-    showInfo() {
+    clickRating(e) {
+      let click_value = e.target.attributes[0].value;
+      let click_id = this.carouselData[click_value].id;
+      this.ratingMovieId = click_id;
       
+      this.$router.push({
+        name: 'Information',
+        params: {
+          ID: this.ratingMovieId
+        }
+      })
+    
     }
   }
 }
@@ -176,8 +188,20 @@ export default {
 .rating-carousel {
   width: 99vw;
   display: inline-block;
+  position: relative;
   /*border: 3px solid red;*/
   /*box-sizing: border-box;*/
+}
+.rating-click-area {
+  width: 90%;
+  height: 540px;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transform: translateX(6%);
+  cursor: pointer;
 }
 .rating-wrapper{
   width: 100%;

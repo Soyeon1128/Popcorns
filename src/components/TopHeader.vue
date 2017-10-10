@@ -1,7 +1,7 @@
 <template>
   <div class="topheader-container">
     <header class="header">
-      <h1>POPCORNS</h1>
+      <h1 @click="goToMain">POPCORNS</h1>
       <!--<button class="test" @click="getTestData">통신</button> -->
       <!--<img src="../assets/header_img.png">-->
     </header>
@@ -30,6 +30,11 @@ export default {
       })
       .catch(error => {
         console.log(error);
+      })
+    },
+    goToMain() {
+      this.$router.push({
+        name: 'Main'
       })
     }
   }
