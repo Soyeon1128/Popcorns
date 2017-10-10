@@ -28,8 +28,12 @@
           <div class="info-company">
             <div class="company-item" v-for="(item,index) in company_array" :key="company_array[index]"> {{ item }} </div>
           </div>
-          <div class="info-tagline"> " {{ movieData.tagline }} " </div>
-          <div class="info-overview"> {{ movieData.overview }} </div>
+          <!--<div class="info-plot">-->
+            <!--<span class="tagline-quote">"</span>-->
+          <div class="info-tagline"> {{ movieData.tagline }} </div>
+            <!--<span class="tagline-quote">"</span>-->
+          <textarea class="info-overview" type="text" readonly="readonly" v-model="movieData.overview"></textarea>
+          <!--</div>-->
         </div>
       </div>
       <div class="info-credit">
@@ -69,9 +73,15 @@ export default {
   methods: {
     getMovieData() {
       this.$http.get(
-        this.$store.state.url_movie + "293660" + this.$store.state.api_key + this.$store.state.url_korean
+        // this.$store.state.url_movie + "293660" + this.$store.state.api_key + this.$store.state.url_korean
         // this.$store.state.url_movie + "27205" + this.$store.state.api_key + this.$store.state.url_korean
-        // this.$store.state.url_movie + "155" + this.$store.state.api_key + this.$store.state.url_korean
+        this.$store.state.url_movie + "155" + this.$store.state.api_key + this.$store.state.url_korean
+        // this.$store.state.url_movie + "13" + this.$store.state.api_key + this.$store.state.url_korean
+        // this.$store.state.url_movie + "372058" + this.$store.state.api_key + this.$store.state.url_korean
+        // this.$store.state.url_movie + "296096" + this.$store.state.api_key + this.$store.state.url_korean
+        // this.$store.state.url_movie + "597" + this.$store.state.api_key + this.$store.state.url_korean
+        // this.$store.state.url_movie + "310" + this.$store.state.api_key + this.$store.state.url_korean
+        // this.$store.state.url_movie + "343668" + this.$store.state.api_key + this.$store.state.url_korean
       )
       .then(response => {
         console.log(response.data);
@@ -228,39 +238,41 @@ export default {
   margin-top: 78px;
   font-size: 18px;
 }
-.info-header {
+/*.info-header {
   font-size: 28px;
-  /*font-weight: 500;*/
-  /*text-shadow: 5px 5px #000;*/
   margin: 20px 0 30px 140px;
-}
+}*/
 /* 영화 정보 영역 */
 .info-movie {
-  width: 70%;
-  margin: 5% 15% 5% 15%;
+  width: 74%;
+  margin: 0 13%;
   float: left;
-  /*padding: 10px 50px;*/
+  padding: 4% 0;
+  height: 100%;
+  box-sizing: border-box;
 }
 .info-poster {
   float: left;  
-  width: 55%;
+  width: 50%;
 }
 .info-poster img {
-  width: 85%;
+  width: 87%;
 }
 .info-description {
   float: left;  
-  width: 45%;
+  width: 50%;
+  /*max-height: 670px;*/
+  /*overflow: hidden;*/
   margin-top: 20px;
   /*padding-right: 30px;*/
   /*background: darkblue;*/
-  /*padding: 10px;*/
-  box-sizing: border-box;
+  /*padding-left: 50px;*/
+  /*box-sizing: border-box;*/
 }
 .info-title {
   font-size: 40px;
   font-weight: 500;
-  margin-left: -5px;
+  /*margin-left: -5px;*/
   margin-bottom: 10px;
 }
 .info-original-title {
@@ -321,7 +333,7 @@ export default {
   display: inline-block;
 }
 .info-company {
-  margin-bottom: 45px;
+  margin-bottom: 40px;
   width: 70%;
 }
 .company-item {
@@ -329,13 +341,35 @@ export default {
   display: inline-block;
   font-size: 14px;  
 }
+.info-plot {
+  /*max-height: 600px;*/
+}
+.tagline-quote {
+  font-size: 30px;
+  display: inline-block;
+  margin-top: -30px;
+}
 .info-tagline {
+  display: inline-block;
   margin-bottom: 20px;
   font-size: 22px;
   font-weight: 700;
+  line-height: 28px;
+  /*width: 400px;*/
+  max-height: 57px;
+  max-width: 450px;
+  overflow: hidden;
 }
 .info-overview {
   line-height: 24px;
+  font-size: 17px;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-weight: 200;
+  width: 100%;
+  height: 320px;
+
 }
 /* 인물 정보 영역 */
 .info-credit {
