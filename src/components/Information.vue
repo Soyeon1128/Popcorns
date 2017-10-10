@@ -37,11 +37,22 @@
         </div>
       </div>
       <div class="info-credit">
-        <div class="info-cast" v-for="(item, index) in castData" :key="item.cast_id">
-          <div class="cast-item"> {{ item.character }} </div>
-          <div class="cast-item"> {{ item.name }} </div>
-          <div class="cast-item"> {{ item.gender }} </div>
-          <img :src="item.profile_path" alt="">
+        <h2> Director & Actor </h2>
+        <div class="credit-wrapper">
+          <div class="info-crew">
+            <div class="crew-img-wrapper">
+              <img class="crew-img" :src="crewData.profile_path" alt="감독 프로필 이미지">
+            </div>
+            <div class="credit-item crew-name"> {{ crewData.name }} </div>
+            <h4 class="credit-item crew-department"> 감독 </h4>                      
+          </div>
+          <div class="info-cast" v-for="(item, index) in castData" :key="item.cast_id">
+            <div class="cast-img-wrapper">            
+              <img class="cast-img" :src="item.profile_path" alt="배우 프로필 이미지">
+            </div>
+            <div class="credit-item cast-name"> {{ item.name }} </div>
+            <div class="credit-item cast-character"> {{ item.character }} 역</div>
+          </div>
         </div>
       </div>
     </div>
@@ -72,16 +83,18 @@ export default {
   },
   methods: {
     getMovieData() {
+      // let movie_id = "155"; 
+      // let movie_id = "293660";
+      let movie_id = "27205";
+      // let movie_id = "13";
+      // let movie_id = "372058";
+      // let movie_id = "296096";
+      // let movie_id = "597";
+      // let movie_id = "310";
+      // let movie_id = "343668";
+
       this.$http.get(
-        // this.$store.state.url_movie + "293660" + this.$store.state.api_key + this.$store.state.url_korean
-        // this.$store.state.url_movie + "27205" + this.$store.state.api_key + this.$store.state.url_korean
-        this.$store.state.url_movie + "155" + this.$store.state.api_key + this.$store.state.url_korean
-        // this.$store.state.url_movie + "13" + this.$store.state.api_key + this.$store.state.url_korean
-        // this.$store.state.url_movie + "372058" + this.$store.state.api_key + this.$store.state.url_korean
-        // this.$store.state.url_movie + "296096" + this.$store.state.api_key + this.$store.state.url_korean
-        // this.$store.state.url_movie + "597" + this.$store.state.api_key + this.$store.state.url_korean
-        // this.$store.state.url_movie + "310" + this.$store.state.api_key + this.$store.state.url_korean
-        // this.$store.state.url_movie + "343668" + this.$store.state.api_key + this.$store.state.url_korean
+        this.$store.state.url_movie + movie_id + this.$store.state.api_key + this.$store.state.url_korean
       )
       .then(response => {
         console.log(response.data);
@@ -191,13 +204,30 @@ export default {
 
         // Credit 통신
         this.$http.get(
-          this.$store.state.url_movie + "293660" + "/credits" + this.$store.state.api_key + this.$store.state.url_korean
+          this.$store.state.url_movie + movie_id + "/credits" + this.$store.state.api_key + this.$store.state.url_korean
         )
         .then(response => {
           this.creditData = response.data;
+
+          // crew 데이터
+          let crew_length = this.creditData.crew.length;
+          for (let i=0; i<crew_length; i++) {
+            if ( this.creditData.crew[i].department === "Directing") {
+              this.crewData = this.creditData.crew[i];
+              break;
+            }
+          }
+          if ( !!this.crewData.profile_path ) {
+            this.crewData.profile_path = this.$store.state.url_profile + this.crewData.profile_path;            
+          }
+          else {
+            this.crewData.profile_path = this.$store.state.url_noprofile;
+
+          }
+
           
           // cast 데이터
-          for(let i=0; i<10; i++) {
+          for(let i=0; i<11; i++) {
             this.creditData.cast[i].profile_path = this.$store.state.url_profile + this.creditData.cast[i].profile_path;
             this.castData.push(this.creditData.cast[i]);
           }
@@ -326,7 +356,7 @@ export default {
   line-height: 34px;
 }
 .info-genre {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 .genre-item {
   margin-right: 10px; 
@@ -340,9 +370,6 @@ export default {
   margin-right: 10px; 
   display: inline-block;
   font-size: 14px;  
-}
-.info-plot {
-  /*max-height: 600px;*/
 }
 .tagline-quote {
   font-size: 30px;
@@ -373,7 +400,72 @@ export default {
 }
 /* 인물 정보 영역 */
 .info-credit {
-
+  float: left;
+  width: 100%;
+  /*margin: 0 25%;*/
+  /*padding-left: 25%;*/
+}
+.info-credit h2 {
+  font-size: 30px;
+  margin: 30px;
+  display: inline-block;
+}
+.credit-wrapper {
+  width: 100%;
+  /*margin-left: 3%;*/
+  padding: 0 5%;
+  /*background: lightgreen;*/
+  box-sizing: border-box;
+  /*margin: 0 auto;*/
+}
+/*.credit-wrapper img {
+  width: 185px;
+  height: 278px;
+}*/
+.info-crew, .info-cast {
+  display: inline-block;  
+  width: 185px;
+  /*background: yellow;*/
+  height: 370px;
+  margin: 0 1%;
+}
+.crew-img-wrapper, .cast-img-wrapper {
+  position: relative;
+  width: 185px;
+  height: 278px;
+  overflow: hidden;
+}
+.crew-img, .cast-img {
+  /*min-height: 278px;*/
+  /*width: 185px;*/
+  height: 100%;
+  position: absolute;
+  /*top: 50%;*/
+  left: 50%;
+  transform: translateX(-50%); 
+  float: left;
+}
+.credit-item {
+  width: 185px;
+  float: left;
+}
+.crew-name {
+  font-weight: 700;
+  margin-top: 10px;
+}
+.crew-department {
+  font-weight: 300;
+  font-size: 16px;
+  margin-top: 5px;
+}
+.cast-name {
+  font-weight: 700;
+  margin-top: 10px;
+}
+.cast-character {
+  font-weight: 300;
+  font-size: 16px;
+  margin-top: 5px;
 }
 </style>
 

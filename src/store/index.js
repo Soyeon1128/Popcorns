@@ -21,6 +21,7 @@ export const store = new Vuex.Store({
     url_popularity : "&sort_by=popularity.desc",
     url_korean : "&language=ko",
     url_noposter : "http://imgur.com/pX9VPgU.jpg",
+    url_noprofile : "http://imgur.com/ycmr3A3.jpg",
   },
 
   getters: {
