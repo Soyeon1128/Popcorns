@@ -1,5 +1,6 @@
 import Main from './components/Main.vue'
 import Information from './components/Information.vue'
+import Search from './components/Search.vue'
 
 export const routes = [
   {
@@ -14,6 +15,13 @@ export const routes = [
     path: '/information',
     components: {
       default: Information
+    }
+  },
+  {
+    name: 'Search',
+    path: '/Search',
+    components: {
+      default: Search
     }
   },
 ]

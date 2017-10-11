@@ -4,14 +4,37 @@
       <h1 @click="goToMain">POPCORNS</h1>
       <!--<button class="test" @click="getTestData">통신</button> -->
       <!--<img src="../assets/header_img.png">-->
+      <form class="search-form">
+        <label for="search-movie"> 검색 </label>
+        <input id="search-movie" type="text" placeholder="검색어를 입력해주세요." @input="goToSearch">
+        <!--<input id="search-movie" type="text" placeholder="검색어를 입력해주세요." v-model="search_keyword" >-->
+        <button class="search-btn fa fa-search" type="button"></button>
+      </form>
     </header>
   </div>
 </template>
 
 <script>
+import {mapGetters, mapMutations} from 'vuex'
+
 export default {
   name: 'TopHeader',
+  data () {
+    return {
+      // searchKeyword: "",
+      // searchData: ""
+    }
+  },
+  computed: {
+    ...mapGetters([
+      // 'searchKeyword',
+      // 'searchData',
+    ])
+  },
   methods : {
+    ...mapMutations([
+      'showAllSearchResults'
+    ]),
     getTestData() {
       this.$http.get(
         // "http://api.themoviedb.org/3/movie/155/casts?api_key=d699f344a468b575a26d5ea50f0265f4",
@@ -36,7 +59,48 @@ export default {
       this.$router.push({
         name: 'Main'
       })
+    },
+    goToSearch(e) {
+      this.showAllSearchResults(e);
+
+      this.$router.push({
+        name: 'Search'
+      })
     }
+    // inputChangeSearch(e) {
+    //   this.searchKeyword = e.target.value;
+
+    //   let keyword = this.searchKeyword;
+
+      // this.$http.get(
+      //   this.$store.state.url_search + this.$store.state.api_key + this.$store.state.url_korean + "&query=" + keyword
+      // )
+      // .then(response => {
+      //   this.searchData = response.data.results;
+      //   this.$router.push({
+      //     name: 'Search',
+      //     params: {
+      //       data: this.searchData
+      //     }
+      //   })
+      // })
+      // .catch(error => {
+      //   console.log(error);
+      // })
+    // },
+    // clickSearch(e) {
+    //   let keyword = this.search_keyword;
+      
+    //   this.$http.get(
+    //     this.$store.state.url_search + this.$store.state.api_key + this.$store.state.url_korean + "&query=" + keyword
+    //   )
+    //   .then(response => {
+    //     console.log(response.data);
+    //   })
+    //   .catch(error => {
+    //     console.log(error);
+    //   })
+    // }
   }
 }
 </script>
@@ -46,12 +110,12 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 3000;
   width: 100%;
 }
 .header {
   width: 100%;
-  /*height: 60px;*/
+  /*background: #fff;*/
   background: rgba(0, 0, 0, 0.7);
   padding: 17px
 }
@@ -64,6 +128,7 @@ export default {
   /*line-height: 70px;*/
   padding: 5px 12px 3px 12px;
   display: inline-block;
+  cursor: pointer;
   /*border: 3px solid rgba(255, 0, 0, 0.7);*/
   /*border-radius: 20px;*/
 }
@@ -71,6 +136,41 @@ export default {
   width: 80px;
   height: 30px;
   font-size: 23px;
+}
+.search-form {
+  /*background: green;*/
+  display: inline-block;
+  position: absolute;
+  top: 28%;
+  right: 3%;
+}
+.search-form label {
+  color: rgba(255, 0, 0, 0.7);
+  /*color: #ccc;*/
+  font-size: 25px;
+  font-weight: 500;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+#search-movie {
+  width: 250px;
+  height: 24px;
+  font-size: 18px;
+  font-weight: 300;
+  color: #ccc;
+  border: 2px solid rgba(255, 0, 0, 0.7);
+  background: transparent;
+  border-radius: 12px;
+  padding: 3px 10px;
+  vertical-align: middle;
+}
+.search-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 0, 0, 0.7);
+  font-size: 22px;
+  cursor: pointer;
+  vertical-align: middle; 
 }
 </style>
 
