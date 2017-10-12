@@ -37,9 +37,10 @@ export default {
     ]),
     getTestData() {
       this.$http.get(
-        // "http://api.themoviedb.org/3/movie/155/casts?api_key=d699f344a468b575a26d5ea50f0265f4",
-
-        "https://api.themoviedb.org/3/search/movie?api_key=d699f344a468b575a26d5ea50f0265f4&language=ko&query=boyhood"
+        // "https://api.themoviedb.org/3/search/person?api_key=d699f344a468b575a26d5ea50f0265f4&query=tom"
+        // "https://api.themoviedb.org/3/person/31?api_key=d699f344a468b575a26d5ea50f0265f4"
+        // "http://api.themoviedb.org/3/movie/155/casts?api_key=d699f344a468b575a26d5ea50f0265f4",        
+        // "https://api.themoviedb.org/3/search/movie?api_key=d699f344a468b575a26d5ea50f0265f4&language=ko&query=boyhood"
         // "https://api.themoviedb.org/3/movie/155?api_key=d699f344a468b575a26d5ea50f0265f4&language=ko"
         // "http://api.themoviedb.org/3/discover/movie?api_key=d699f344a468b575a26d5ea50f0265f4&language=ko&sort_by=popularity.desc"
         // "https://api.themoviedb.org/3/genre/movie/list?api_key=d699f344a468b575a26d5ea50f0265f4"

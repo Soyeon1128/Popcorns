@@ -308,15 +308,15 @@ export default {
 <style>
 .rating-genre-container {
   overflow: hidden;
-  padding-top: 10px;
+  /*padding-top: 10px;*/
   background: #000;
 }
 .genre-header {
   background: #000;
-  font-size: 35px;
+  font-size: 32px;
   font-weight: 500;
   color: #ccc;
-  margin: 20px 0 30px 20px;
+  margin: 25px 0 25px 20px;
   /*height: 50px;*/
 }
 .genre-area {
@@ -328,9 +328,9 @@ export default {
 .genre-area h4 {
   color: #ccc;
   font-size: 20px;
-  /*font-weight: 700;*/
+  /*font-weight: 500;*/
   /*padding: 5px;*/
-  margin: 0 0 15px 20px;
+  margin: 0 0 15px 30px;
   /*display: inline-block;*/
 }
 .genre-carousel-left {

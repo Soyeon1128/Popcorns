@@ -12,7 +12,7 @@
           <span> > </span>
         </button>
         <!--그라디언트 이미지-->
-        <img class="rating-gradient" src="../assets/gradient_img.png">
+        <img class="rating-gradient" src="../assets/graimg_5.png">
         <!--영화 이미지-->
         <img class="rating-poster" :src="item.backdrop_path">
         <!--영화 설명 영역-->
@@ -177,7 +177,7 @@ export default {
 .rating-container {
   height: 550px;
   overflow: hidden;
-  padding-top: 70px;
+  padding-top: 78px;
 }
 /* 컨테이너 영역 */
 .rating-carousel-wrapper {
@@ -473,22 +473,22 @@ export default {
   transform: translateY(-50%);
   /*height: 720px;*/
   z-index: 200;
-  width: 80%;
+  width: 77%;
   min-width: 978px; 
-  min-height: 550px;
+  height: 550px;
   /*border: 3px solid red;*/
 }
 /* 영화 이미지 영역 */
 .rating-poster {
   position: absolute;
   top: 50%;
-  left: 0;
+  left: -4%;
   transform: translateY(-50%);
   /*max-height: 1280px;*/
   /*width: 300px;*/
   z-index: 100;  
   /*height: 550px;*/
-  width: 80%;
+  width: 77%;
   min-width: 978px; 
   min-height: 550px;
   /*margin-left: 100px;*/
@@ -497,7 +497,7 @@ export default {
 .rating-description {
   position: absolute;
   top: 80px;
-  left: 63%;
+  left: 60%;
   z-index: 300;
   width: 30%;
   height: 550px;
@@ -505,30 +505,31 @@ export default {
   padding: 20px;
 }
 .rating-title{
-  font-size: 47px;
+  font-size: 50px;
   font-weight: 500;
   margin-bottom: 15px;
-  margin-left: -10px;
+  /*margin-left: -10px;*/
 }
 .rating-subtitle{
   margin-bottom: 30px;
-  font-size: 14px;
+  font-size: 16px;
 }
 .rating-subtitle h5 {
   display: inline-block;
+  margin-right: 10px;
 }
 .rating-subtitle span {
   display: inline-block;
 }
 .rating-tagline{
   margin-bottom: 30px;  
-  font-size: 23px;
+  font-size: 24px;
   font-weight: 400;
   line-height: 26px;
 }
 .rating-overview{
   line-height: 22px;
-  font-size: 14px;
+  font-size: 16px;
 }
 </style>
 
