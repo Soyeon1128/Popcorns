@@ -2,14 +2,14 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
 import VueRouter from 'vue-router';
-import {routes} from '../routes.js';
-
+// import {routes} from '../routes.js';
 
 Vue.use(Vuex);
 Vue.use(VueRouter);
 
-
 export const store = new Vuex.Store({
+
+  // router,
 
   modules: {
 
@@ -65,6 +65,10 @@ export const store = new Vuex.Store({
             state.search_data[i].poster_path = state.url_noposter_search;
           }
         }
+
+        // router.push({
+        //   name: 'Search'
+        // })
         
       })
       .catch(error => {
